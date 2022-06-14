@@ -1,4 +1,4 @@
-import uniquid from "uniquid";
+import uniqid from "uniqid";
 
 const Data = [
   {
@@ -8,7 +8,7 @@ const Data = [
     Email: "",
     Location: "",
     Description: "",
-    id: uniquid(),
+    id: uniqid(),
   },
   {
     Company: "",
@@ -16,7 +16,7 @@ const Data = [
     "Start Date": "",
     "End Date": "",
     Description: "",
-    id: uniquid(),
+    id: uniqid(),
   },
   {
     Course: "",
@@ -24,7 +24,7 @@ const Data = [
     "Start Date": "",
     "End Date": "",
     Description: "",
-    id: uniquid(),
+    id: uniqid(),
   },
 ];
 

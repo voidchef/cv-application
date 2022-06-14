@@ -8,7 +8,7 @@ import {
 import { Data } from "./components/data/Data";
 import Form from "./components/Form";
 import View from "./components/View";
-import uniquid from "uniquid";
+import uniqid from 'uniqid';
 
 class App extends Component {
   constructor() {
@@ -28,7 +28,7 @@ class App extends Component {
   handleAddSection(id, group, idxNum) {
     const obj = {
       ...Data[idxNum],
-      id: uniquid(),
+      id: uniqid(),
     };
     this.setState({
       [group]: this.state[group].concat(obj),
