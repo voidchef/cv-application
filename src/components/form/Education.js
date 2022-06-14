@@ -36,6 +36,8 @@ class Education extends Component {
                       />
                     );
                   }
+                } else {
+                  return null;
                 }
               })}
               <BtnCreator

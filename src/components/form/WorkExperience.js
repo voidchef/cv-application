@@ -36,6 +36,8 @@ class WorkExperience extends Component {
                       />
                     );
                   }
+                } else {
+                  return null;
                 }
               })}
               <BtnCreator

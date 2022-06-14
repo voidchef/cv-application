@@ -32,6 +32,8 @@ class PersonalDetails extends Component {
                 />
               );
             }
+          } else {
+            return null
           }
         })}
       </div>
