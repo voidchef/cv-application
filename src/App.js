@@ -29,6 +29,13 @@ class App extends Component {
     });
   }
 
+  handleDeleteSection(id, group, idxNum) {
+    const newObj = this.state[group].filter((obj) => obj.id !== id);
+    this.setState({
+      [group]: newObj,
+    });
+  }
+
   render() {
     return <div className="App"></div>;
   }
