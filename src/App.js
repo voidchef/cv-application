@@ -6,6 +6,7 @@ import {
   DefaultEducation,
 } from "./components/data/Default";
 import { Data } from "./components/data/Data";
+import Form from "./components/Form";
 import uniquid from "uniquid";
 
 class App extends Component {
@@ -54,7 +55,21 @@ class App extends Component {
   }
 
   render() {
-    return <div className="App"></div>;
+    const { personal, experience, education } = this.state;
+    return (
+      <div className="App">
+        <div className="container">
+          <Form
+            personal={personal}
+            experience={experience}
+            education={education}
+            Add={this.handleAddSection}
+            Change={this.handleChangeInput}
+            Delete={this.handleDeleteSection}
+          />
+        </div>
+      </div>
+    );
   }
 }
 
