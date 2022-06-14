@@ -1,5 +1,8 @@
 import "../../styles/PersonalDetailsView.css";
 import React, { Component } from "react";
+import phoneIcon from "../../img/phone-square-solid.svg";
+import emailIcon from "../../img/envelope-square-solid.svg";
+import locationIcon from "../../img/map-marker-alt-solid.svg";
 
 class PersonalDetailsView extends Component {
   render() {
@@ -13,24 +16,15 @@ class PersonalDetailsView extends Component {
           </div>
           <div className="contact">
             <div className="phone">
-              <img
-                src={process.env.PUBLIC_URL + "/img/phone-square-solid.svg"}
-                alt="phone"
-              ></img>
+              <img src={phoneIcon} alt="phone"></img>
               {data[0]["Phone"]}
             </div>
             <div className="email">
-              <img
-                src={process.env.PUBLIC_URL + "/img/envelope-square-solid.svg"}
-                alt="envelope"
-              ></img>
+              <img src={emailIcon} alt="envelope"></img>
               {data[0]["Email"]}
             </div>
             <div className="location">
-              <img
-                src={process.env.PUBLIC_URL + "/img/map-marker-alt-solid.svg"}
-                alt="map"
-              ></img>
+              <img src={locationIcon} alt="map"></img>
               {data[0]["Location"]}
             </div>
           </div>
