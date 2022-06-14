@@ -7,6 +7,7 @@ import {
 } from "./components/data/Default";
 import { Data } from "./components/data/Data";
 import Form from "./components/Form";
+import View from "./components/View";
 import uniquid from "uniquid";
 
 class App extends Component {
@@ -66,6 +67,11 @@ class App extends Component {
             Add={this.handleAddSection}
             Change={this.handleChangeInput}
             Delete={this.handleDeleteSection}
+          />
+          <View
+            personal={personal}
+            experience={experience}
+            education={education}
           />
         </div>
       </div>
