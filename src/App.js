@@ -36,6 +36,23 @@ class App extends Component {
     });
   }
 
+  handleChangeInput(e, id, group) {
+    const { name, value } = e.target;
+    const obj = this.state[group].map((data) => {
+      if (data.id === id) {
+        return {
+          ...data,
+          [name]: value,
+        };
+      } else {
+        return data;
+      }
+    });
+    this.setState({
+      [group]: obj,
+    });
+  }
+
   render() {
     return <div className="App"></div>;
   }
