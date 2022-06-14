@@ -19,6 +19,10 @@ class App extends Component {
       experience: DefaultExperience.map((obj) => ({ ...obj })),
       education: DefaultEducation.map((obj) => ({ ...obj })),
     };
+
+    this.handleChangeInput = this.handleChangeInput.bind(this);
+    this.handleAddSection = this.handleAddSection.bind(this);
+    this.handleDeleteSection = this.handleDeleteSection.bind(this);
   }
 
   handleAddSection(id, group, idxNum) {
