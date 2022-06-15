@@ -6,7 +6,7 @@ Project to create a CV Application
 
 [CV Application](https://voidchef.github.io/cv-application/)
 
-**Note:** This Website works best with High Resolution Screens (1080p and up). Check the [improvements section](#improvements) for future updates.
+![cv-application](https://user-images.githubusercontent.com/79092620/173883322-32f6654e-dd99-45ac-9199-8d69e47491c0.png)
 
 ## Features
 
