@@ -1,34 +1,40 @@
-import "../../styles/InputCreator.css";
 import React, { Component } from "react";
+import TextField from "@mui/material/TextField";
 
 class InputCreator extends Component {
   render() {
-    const { id, value, Change, group, name, type = "text" } = this.props;
-    if (type === "textarea") {
+    const { id, value, Change, group, name } = this.props;
+    if (name === "Description") {
       return (
-        <textarea
-          className={name}
+        <TextField
           id={id}
+          label={name}
           name={name}
-          type={type}
-          placeholder={name}
+          defaultValue={value}
+          fullWidth
+          multiline
+          size="small"
+          margin="dense"
           onChange={(e) => Change(e, id, group)}
-          value={value}
-        />
-      );
-    } else {
-      return (
-        <input
-          className={name}
-          id={id}
-          name={name}
-          type={type}
-          placeholder={name}
-          onChange={(e) => Change(e, id, group)}
-          value={value}
+          inputProps={{ style: { fontSize: "0.85rem" } }}
+          InputLabelProps={{ style: { fontSize: "0.85rem" } }}
         />
       );
     }
+    return (
+      <TextField
+        id={id}
+        label={name}
+        name={name}
+        defaultValue={value}
+        fullWidth
+        size="small"
+        margin="dense"
+        onChange={(e) => Change(e, id, group)}
+        inputProps={{ style: { fontSize: "0.85rem" } }}
+        InputLabelProps={{ style: { fontSize: "0.85rem" } }}
+      />
+    );
   }
 }
 
