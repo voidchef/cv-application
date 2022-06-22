@@ -1,5 +1,7 @@
 import "./styles/App.css";
 import React, { Component } from "react";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "./theme";
 import {
   DefaultPersonal,
   DefaultExperience,
@@ -8,7 +10,7 @@ import {
 import { Data } from "./components/data/Data";
 import Form from "./components/Form";
 import View from "./components/View";
-import uniqid from 'uniqid';
+import uniqid from "uniqid";
 
 class App extends Component {
   constructor() {
@@ -62,7 +64,7 @@ class App extends Component {
   render() {
     const { personal, experience, education } = this.state;
     return (
-      <div className="App">
+      <ThemeProvider theme={theme}>
         <div className="container">
           <Form
             personal={personal}
@@ -78,7 +80,7 @@ class App extends Component {
             education={education}
           />
         </div>
-      </div>
+      </ThemeProvider>
     );
   }
 }
