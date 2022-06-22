@@ -1,4 +1,3 @@
-import "../styles/Form.css";
 import React, { Component } from "react";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
@@ -41,4 +40,3 @@ class Form extends Component {
 }
 
 export default Form;
-
