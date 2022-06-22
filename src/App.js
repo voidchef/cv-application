@@ -2,6 +2,7 @@ import "./styles/App.css";
 import React, { Component } from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
+import Container from "@mui/material/Container";
 import {
   DefaultPersonal,
   DefaultExperience,
@@ -65,7 +66,17 @@ class App extends Component {
     const { personal, experience, education } = this.state;
     return (
       <ThemeProvider theme={theme}>
-        <div className="container">
+        <Container
+          maxWidth={false}
+          sx={{
+            paddingY: 3,
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: "2.5rem",
+          }}
+        >
           <Form
             personal={personal}
             experience={experience}
@@ -79,7 +90,7 @@ class App extends Component {
             experience={experience}
             education={education}
           />
-        </div>
+        </Container>
       </ThemeProvider>
     );
   }
