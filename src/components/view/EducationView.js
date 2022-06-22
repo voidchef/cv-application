@@ -1,31 +1,49 @@
-import "../../styles/EducationView.css";
 import React, { Component } from "react";
+import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import uniqid from "uniqid";
 
 class EducationView extends Component {
   render() {
     const { data } = this.props;
     return (
-      <div className="EducationView">
-        <h3>EDUCATION</h3>
+      <Stack direction="column" spacing={1}>
+        <Typography variant="h3" component="div">
+          EDUCATION
+        </Typography>
         {data.map((details) => {
           return (
-            <div className="experience">
-              <div className="experienceHeading">
-                <h4>{details["Course"]}</h4>
-                <div className="experienceDetails">
-                  {details["University"]} |{" "}
-                  <span className="duration">
-                    {details["Start Date"]} – {details["End Date"]}
-                  </span>
-                </div>
-              </div>
-              <div className="experienceDescription">
-                {details["Description"]}
-              </div>
-            </div>
+            <Grid container direction="column" key={uniqid()}>
+              <Grid
+                container
+                item
+                direction="row"
+                justifyContent="space-between"
+              >
+                <Grid item>
+                  <Typography variant="h4" component="div" fontWeight={600}>
+                    {details.Course}
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography variant="h4" component="div">
+                    {details.University} |{" "}
+                    <strong>
+                      {details["Start Date"]} – {details["End Date"]}
+                    </strong>
+                  </Typography>
+                </Grid>
+              </Grid>
+              <Grid item>
+                <Typography variant="h4" component="div">
+                  {details.Description}
+                </Typography>
+              </Grid>
+            </Grid>
           );
         })}
-      </div>
+      </Stack>
     );
   }
 }
