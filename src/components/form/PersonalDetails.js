@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import InputCreator from "../utils/InputCreator";
-import uniqid from "uniqid";
 
 class PersonalDetails extends Component {
   render() {
@@ -16,7 +15,7 @@ class PersonalDetails extends Component {
           if (key !== "id") {
             return (
               <InputCreator
-                key={uniqid()}
+                key={`personal${key}`}
                 group="personal"
                 name={key}
                 value={value}

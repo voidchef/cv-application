@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import uniqid from "uniqid";
 
 class EducationView extends Component {
   render() {
@@ -12,9 +11,9 @@ class EducationView extends Component {
         <Typography variant="h3" component="div">
           EDUCATION
         </Typography>
-        {data.map((details) => {
+        {data.map((details, i) => {
           return (
-            <Grid container direction="column" key={uniqid()}>
+            <Grid container direction="column" key={`educationView${i}`}>
               <Grid
                 container
                 item

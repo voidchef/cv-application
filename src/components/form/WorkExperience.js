@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import InputCreator from "../utils/InputCreator";
 import BtnCreator from "../utils/BtnCreator";
-import uniqid from "uniqid";
 
 class WorkExperience extends Component {
   render() {
@@ -15,12 +14,12 @@ class WorkExperience extends Component {
         </Typography>
         {data.map((details, i, data) => {
           return (
-            <Box key={uniqid()}>
+            <Box key={`experience${i}`}>
               {Object.entries(details).map(([key, value]) => {
                 if (key !== "id") {
                   return (
                     <InputCreator
-                      key={uniqid()}
+                      key={`experience${key}`}
                       group="experience"
                       name={key}
                       value={value}
