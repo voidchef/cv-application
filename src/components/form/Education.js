@@ -1,41 +1,33 @@
 import React, { Component } from "react";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import InputCreator from "../utils/InputCreator";
 import BtnCreator from "../utils/BtnCreator";
+import uniqid from "uniqid";
 
 class Education extends Component {
   render() {
     const { data, Change, Add, Delete } = this.props;
     return (
-      <div className="education">
-        <h2>Education</h2>
+      <Box>
+        <Typography variant="h2" component="div">
+          Education
+        </Typography>
         {data.map((details, i, data) => {
           return (
-            <div>
+            <Box key={uniqid()}>
               {Object.entries(details).map(([key, value]) => {
                 if (key !== "id") {
-                  if (key === "Description") {
-                    return (
-                      <InputCreator
-                        type="textarea"
-                        group="education"
-                        name={key}
-                        value={value}
-                        Change={Change}
-                        id={details.id}
-                      />
-                    );
-                  } else {
-                    return (
-                      <InputCreator
-                        type="text"
-                        group="education"
-                        name={key}
-                        value={value}
-                        Change={Change}
-                        id={details.id}
-                      />
-                    );
-                  }
+                  return (
+                    <InputCreator
+                      key={uniqid()}
+                      group="education"
+                      name={key}
+                      value={value}
+                      Change={Change}
+                      id={details.id}
+                    />
+                  );
                 } else {
                   return null;
                 }
@@ -56,7 +48,7 @@ class Education extends Component {
                   description="Add"
                 />
               )}
-            </div>
+            </Box>
           );
         })}
         {data.length === 0 && (
@@ -68,7 +60,7 @@ class Education extends Component {
             description="Add"
           />
         )}
-      </div>
+      </Box>
     );
   }
 }
