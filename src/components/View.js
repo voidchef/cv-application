@@ -1,5 +1,7 @@
 import "../styles/View.css";
 import React, { Component } from "react";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
 import PersonalDetailsView from "./view/PersonalDetailsView";
 import WorkExperienceView from "./view/WorkExperienceView";
 import EducationView from "./view/EducationView";
@@ -8,11 +10,21 @@ class View extends Component {
   render() {
     const { personal, experience, education } = this.props;
     return (
-      <div className="resumeView page">
-        <PersonalDetailsView data={personal} />
-        <WorkExperienceView data={experience} />
-        <EducationView data={education} />
-      </div>
+      <Box
+        sx={{
+          Height: 842,
+          width: 595,
+          p: 5,
+          border: "2px solid #195c70",
+          borderRadius: 1,
+        }}
+      >
+        <Stack spacing={2} direction="column">
+          <PersonalDetailsView data={personal} />
+          <WorkExperienceView data={experience} />
+          <EducationView data={education} />
+        </Stack>
+      </Box>
     );
   }
 }
