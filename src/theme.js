@@ -21,14 +21,14 @@ let theme = createTheme({
       fontWeight: 800,
       margin: 0,
       color: "#195c70",
-      wordBreak: "break-all",
+      wordBreak: "break-word",
     },
     h2: {
       fontSize: "1.2rem",
       fontWeight: 400,
       margin: 0,
       color: "#5e5e5e",
-      wordBreak: "break-all",
+      wordBreak: "break-word",
     },
     h3: {
       fontSize: "0.9rem",

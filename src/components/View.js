@@ -13,7 +13,7 @@ class View extends Component {
         sx={{
           Height: 842,
           width: 595,
-          p: 5,
+          p: 4,
           border: "2px solid #195c70",
           borderRadius: 1,
         }}

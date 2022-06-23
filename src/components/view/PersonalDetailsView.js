@@ -45,7 +45,7 @@ class PersonalDetailsView extends Component {
                 alt="phone"
                 src={phoneIcon}
               />
-              <Typography variant="h4" component="div">
+              <Typography variant="h4" component="div" sx={{ flex: 1 }}>
                 {data[0].Phone}
               </Typography>
             </Grid>
@@ -59,7 +59,7 @@ class PersonalDetailsView extends Component {
                 alt="email"
                 src={emailIcon}
               />
-              <Typography variant="h4" component="div">
+              <Typography variant="h4" component="div" sx={{ flex: 1 }}>
                 {data[0].Email}
               </Typography>
             </Grid>
@@ -73,7 +73,7 @@ class PersonalDetailsView extends Component {
                 alt="location"
                 src={locationIcon}
               />
-              <Typography variant="h4" component="div">
+              <Typography variant="h4" component="div" sx={{ flex: 1 }}>
                 {data[0].Location}
               </Typography>
             </Grid>
