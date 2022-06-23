@@ -14,7 +14,7 @@ class PersonalDetailsView extends Component {
     return (
       <Stack spacing={1} direction="column">
         <Grid container spacing={0} direction="row">
-          <Grid container item spacing={0} direction="column">
+          <Grid container item spacing={0} direction="column" xs={8}>
             <Grid item>
               <Typography variant="h1" component="div">
                 {data[0].Name}
@@ -33,6 +33,7 @@ class PersonalDetailsView extends Component {
             direction="column"
             alignItems="center"
             justify="flex-end"
+            xs={4}
           >
             <Grid container direction="row" item>
               <Box
@@ -79,7 +80,7 @@ class PersonalDetailsView extends Component {
           </Grid>
         </Grid>
         <Divider
-          sx={{ backgroundColor: "primary.main", borderBottomWidth: 2 }}
+          sx={{ backgroundColor: "secondary.main", borderBottomWidth: 2 }}
         />
         <Typography variant="h4" component="div">
           {data[0].Description}

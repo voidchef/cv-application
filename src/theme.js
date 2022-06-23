@@ -5,6 +5,12 @@ let theme = createTheme({
     primary: {
       main: "#195c70",
     },
+    secondary: {
+      main: "#377ea4",
+    },
+    text: {
+      primary: "#5e5e5e",
+    },
   },
   typography: {
     fontFamily: ["Montserrat", "sans-serif"].join(","),
@@ -15,12 +21,14 @@ let theme = createTheme({
       fontWeight: 800,
       margin: 0,
       color: "#195c70",
+      wordBreak: "break-all",
     },
     h2: {
       fontSize: "1.2rem",
       fontWeight: 400,
       margin: 0,
       color: "#5e5e5e",
+      wordBreak: "break-all",
     },
     h3: {
       fontSize: "0.9rem",
@@ -28,6 +36,7 @@ let theme = createTheme({
       letterSpacing: "0.05em",
       margin: 0,
       color: "#377ea4",
+      wordBreak: "break-all",
     },
     h4: {
       fontSize: "0.8rem",
@@ -35,6 +44,7 @@ let theme = createTheme({
       margin: 0,
       color: "#5e5e5e",
       lineHeight: 1.5,
+      wordBreak: "break-all",
     },
   },
 });
