@@ -2,18 +2,23 @@ import React, { Component } from "react";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import { ExperienceModel } from "../../models/interface-models";
 
-class EducationView extends Component {
+interface IProps {
+  data: Array<ExperienceModel>;
+}
+
+class WorkExperienceView extends Component<IProps>  {
   render() {
     const { data } = this.props;
     return (
       <Stack direction="column" spacing={1}>
         <Typography variant="h3" component="div">
-          EDUCATION
+          WORK EXPERIENCE
         </Typography>
         {data.map((details, i) => {
           return (
-            <Grid container direction="column" key={`educationView${i}`}>
+            <Grid container direction="column" key={`experienceView${i}`}>
               <Grid
                 container
                 item
@@ -22,12 +27,12 @@ class EducationView extends Component {
               >
                 <Grid item>
                   <Typography variant="h4" component="div" fontWeight={600}>
-                    {details.Course}
+                    {details.Company}
                   </Typography>
                 </Grid>
                 <Grid item>
                   <Typography variant="h4" component="div">
-                    {details.University} |{" "}
+                    {details.Position} |{" "}
                     <strong>
                       {details["Start Date"]} – {details["End Date"]}
                     </strong>
@@ -47,4 +52,4 @@ class EducationView extends Component {
   }
 }
 
-export default EducationView;
+export default WorkExperienceView;

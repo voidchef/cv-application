@@ -7,8 +7,13 @@ import Divider from "@mui/material/Divider";
 import phoneIcon from "../../img/phone-square-solid.svg";
 import emailIcon from "../../img/envelope-square-solid.svg";
 import locationIcon from "../../img/map-marker-alt-solid.svg";
+import { PersonalModel } from "../../models/interface-models";
 
-class PersonalDetailsView extends Component {
+interface IProps {
+  data: Array<PersonalModel>;
+}
+
+class PersonalDetailsView extends Component<IProps> {
   render() {
     const { data } = this.props;
     return (
@@ -26,15 +31,7 @@ class PersonalDetailsView extends Component {
               </Typography>
             </Grid>
           </Grid>
-          <Grid
-            container
-            item
-            spacing={0}
-            direction="column"
-            alignItems="center"
-            justify="flex-end"
-            xs={4}
-          >
+          <Grid container item spacing={0} direction="column" xs={4}>
             <Grid container direction="row" item>
               <Box
                 component="img"
