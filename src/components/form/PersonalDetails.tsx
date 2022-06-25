@@ -2,10 +2,20 @@ import React, { Component } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import InputCreator from "../utils/InputCreator";
+import { PersonalModel } from "../../models/interface-models";
 
-class PersonalDetails extends Component {
+interface IProps {
+  data: Array<PersonalModel>;
+  handleChangeInput: (
+    e: React.ChangeEvent<HTMLInputElement>,
+    id: string,
+    group: string
+  ) => void;
+}
+
+class PersonalDetails extends Component<IProps> {
   render() {
-    const { data, Change } = this.props;
+    const { data, handleChangeInput } = this.props;
     return (
       <Box>
         <Typography variant="h2" component="div">
@@ -19,8 +29,8 @@ class PersonalDetails extends Component {
                 group="personal"
                 name={key}
                 value={value}
-                Change={Change}
-                id={data[0].id}
+                handleChangeInput={handleChangeInput}
+                id={String(data[0].id)}
               />
             );
           } else {

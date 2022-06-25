@@ -3,27 +3,40 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import InputCreator from "../utils/InputCreator";
 import BtnCreator from "../utils/BtnCreator";
+import { EducationModel } from "../../models/interface-models";
 
-class WorkExperience extends Component {
+interface IProps {
+  data: Array<EducationModel>;
+  handleChangeInput: (
+    e: React.ChangeEvent<HTMLInputElement>,
+    id: string,
+    group: string
+  ) => void;
+  handleAddSection: (id: string, group: string) => void;
+  handleDeleteSection: (id: string, group: string) => void;
+}
+
+class Education extends Component<IProps> {
   render() {
-    const { data, Change, Add, Delete } = this.props;
+    const { data, handleChangeInput, handleAddSection, handleDeleteSection } =
+      this.props;
     return (
       <Box>
         <Typography variant="h2" component="div">
-          Work Experience
+          Education
         </Typography>
         {data.map((details, i, data) => {
           return (
-            <Box key={`experience${i}`}>
+            <Box key={`education${i}`}>
               {Object.entries(details).map(([key, value]) => {
                 if (key !== "id") {
                   return (
                     <InputCreator
-                      key={`experience${key}`}
-                      group="experience"
+                      key={`education${key}`}
+                      group="education"
                       name={key}
                       value={value}
-                      Change={Change}
+                      handleChangeInput={handleChangeInput}
                       id={details.id}
                     />
                   );
@@ -32,18 +45,18 @@ class WorkExperience extends Component {
                 }
               })}
               <BtnCreator
-                group="experience"
-                className="DeleteBtn"
-                func={Delete}
+                group="education"
+                className="handleDeleteSectionBtn"
+                onClick={handleDeleteSection}
                 id={details.id}
                 description="Delete"
               />
               {data.length - 1 === i && (
                 <BtnCreator
-                  group="experience"
-                  idxNum="1"
-                  className="AddBtn"
-                  func={Add}
+                  id=""
+                  group="education"
+                  className="handleAddSectionBtn"
+                  onClick={handleAddSection}
                   description="Add"
                 />
               )}
@@ -52,10 +65,10 @@ class WorkExperience extends Component {
         })}
         {data.length === 0 && (
           <BtnCreator
-            group="experience"
-            idxNum="1"
-            className="AddBtn"
-            func={Add}
+            id=""
+            group="education"
+            className="handleAddSectionBtn"
+            onClick={handleAddSection}
             description="Add"
           />
         )}
@@ -64,4 +77,4 @@ class WorkExperience extends Component {
   }
 }
 
-export default WorkExperience;
+export default Education;
