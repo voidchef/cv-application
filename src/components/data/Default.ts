@@ -1,6 +1,11 @@
-import uniqid from 'uniqid';
+import uniqid from "uniqid";
+import {
+  PersonalModel,
+  ExperienceModel,
+  EducationModel,
+} from "../../models/interface-models";
 
-export const DefaultPersonal = {
+export const DefaultPersonal: PersonalModel = {
   Name: "John Doeman",
   Title: "Software Developer",
   Phone: "01234 567890",
@@ -11,7 +16,7 @@ export const DefaultPersonal = {
   id: uniqid(),
 };
 
-export const DefaultExperience = [
+export const DefaultExperience: ExperienceModel[] = [
   {
     Company: "A Software Company",
     Position: "Software Engineer",
@@ -40,7 +45,7 @@ export const DefaultExperience = [
   },
 ];
 
-export const DefaultEducation = [
+export const DefaultEducation: EducationModel[] = [
   {
     Course: "CS50: Introduction to Computer Science",
     University: "Harvard University",
