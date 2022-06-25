@@ -5,7 +5,13 @@ import PersonalDetailsView from "./view/PersonalDetailsView";
 import WorkExperienceView from "./view/WorkExperienceView";
 import EducationView from "./view/EducationView";
 
-class View extends Component {
+interface IProps {
+  personal: Array<any>;
+  experience: Array<any>;
+  education: Array<any>;
+}
+
+class View extends Component<IProps> {
   render() {
     const { personal, experience, education } = this.props;
     return (

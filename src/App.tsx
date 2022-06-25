@@ -125,9 +125,9 @@ class App extends Component<{}, State> {
             personal={personal}
             experience={experience}
             education={education}
-            Add={this.handleAddSection}
-            Change={this.handleChangeInput}
-            Delete={this.handleDeleteSection}
+            handleAddSection={this.handleAddSection}
+            handleChangeInput={this.handleChangeInput}
+            handleDeleteSection={this.handleDeleteSection}
           />
           <View
             personal={personal}
