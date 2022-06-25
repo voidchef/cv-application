@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import Button from "@mui/material/Button";
 
-class BtnCreator extends Component {
+interface IProps {
+  id: string;
+  group: string;
+  className: string;
+  description: string;
+  onClick: (id: string, group: string) => void;
+}
+
+class BtnCreator extends Component<IProps> {
   render() {
-    const {
-      id = null,
-      idxNum = null,
-      group = null,
-      className = null,
-      func = null,
-      description = null,
-    } = this.props;
+    const { id, group, className, onClick, description } = this.props;
     return (
       <Button
         sx={{ margin: "8px 8px 8px 0px" }}
@@ -18,7 +19,7 @@ class BtnCreator extends Component {
         size="small"
         color="success"
         className={className}
-        onClick={() => func(id, group, idxNum)}
+        onClick={() => onClick(id, group)}
       >
         {description}
       </Button>

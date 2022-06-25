@@ -1,9 +1,21 @@
 import React, { Component } from "react";
 import TextField from "@mui/material/TextField";
 
-class InputCreator extends Component {
+interface IProps {
+  id: string;
+  group: string;
+  name: string;
+  value: string;
+  handleChangeInput: (
+    e: React.ChangeEvent<HTMLInputElement>,
+    id: string,
+    group: string
+  ) => void;
+}
+
+class InputCreator extends Component<IProps> {
   render() {
-    const { id, value, Change, group, name } = this.props;
+    const { id, value, handleChangeInput, group, name } = this.props;
     if (name === "Description") {
       return (
         <TextField
@@ -15,7 +27,9 @@ class InputCreator extends Component {
           multiline
           size="small"
           margin="dense"
-          onChange={(e) => Change(e, id, group)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            handleChangeInput(e, id, group)
+          }
           inputProps={{ style: { fontSize: "0.85rem" } }}
           InputLabelProps={{ style: { fontSize: "0.85rem" } }}
         />
@@ -30,7 +44,9 @@ class InputCreator extends Component {
         fullWidth
         size="small"
         margin="dense"
-        onChange={(e) => Change(e, id, group)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          handleChangeInput(e, id, group)
+        }
         inputProps={{ style: { fontSize: "0.85rem" } }}
         InputLabelProps={{ style: { fontSize: "0.85rem" } }}
       />
