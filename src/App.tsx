@@ -7,14 +7,20 @@ import {
   DefaultExperience,
   DefaultEducation,
 } from "./components/data/Default";
-import { Data } from "./components/data/Data";
+import { Experience, Education } from "./components/data/Data";
 import Form from "./components/Form";
 import View from "./components/View";
+import {
+  State,
+  PersonalModel,
+  ExperienceModel,
+  EducationModel,
+} from "./models/interface-models";
 import uniqid from "uniqid";
 
-class App extends Component {
-  constructor() {
-    super();
+class App extends Component<{}, State> {
+  constructor(props: {}) {
+    super(props);
 
     this.state = {
       personal: [DefaultPersonal],
