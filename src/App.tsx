@@ -33,38 +33,77 @@ class App extends Component<{}, State> {
     this.handleDeleteSection = this.handleDeleteSection.bind(this);
   }
 
-  handleAddSection(id, group, idxNum) {
-    const obj = {
-      ...Data[idxNum],
-      id: uniqid(),
-    };
-    this.setState({
-      [group]: this.state[group].concat(obj),
-    });
-  }
-
-  handleDeleteSection(id, group, idxNum) {
-    const newObj = this.state[group].filter((obj) => obj.id !== id);
-    this.setState({
-      [group]: newObj,
-    });
-  }
-
-  handleChangeInput(e, id, group) {
+  handleChangeInput(
+    e: { target: { name: string; value: string } },
+    id: string,
+    group: string
+  ) {
     const { name, value } = e.target;
-    const obj = this.state[group].map((data) => {
-      if (data.id === id) {
-        return {
-          ...data,
-          [name]: value,
-        };
-      } else {
-        return data;
-      }
-    });
-    this.setState({
-      [group]: obj,
-    });
+    if (group === "experience") {
+      const obj: ExperienceModel[] = this.state[group].map((data) => {
+        if (data.id === String(id)) {
+          return {
+            ...data,
+            [name]: value,
+          };
+        } else {
+          return data;
+        }
+      });
+      this.setState({ experience: obj });
+    } else if (group === "education") {
+      const obj: EducationModel[] = this.state[group].map((data) => {
+        if (data.id === String(id)) {
+          return {
+            ...data,
+            [name]: value,
+          };
+        } else {
+          return data;
+        }
+      });
+      this.setState({ education: obj });
+    } else if (group === "personal") {
+      const obj: PersonalModel[] = this.state[group].map((data) => {
+        if (data.id === String(id)) {
+          return {
+            ...data,
+            [name]: value,
+          };
+        } else {
+          return data;
+        }
+      });
+      this.setState({ personal: obj });
+    }
+  }
+
+  handleAddSection(id: string, group: string) {
+    if (group === "experience") {
+      const obj = {
+        ...Experience,
+        id: uniqid(),
+      };
+      this.setState({ experience: this.state.experience.concat(obj) });
+    } else if (group === "education") {
+      const obj = {
+        ...Education,
+        id: uniqid(),
+      };
+      this.setState({ education: this.state.education.concat(obj) });
+    }
+  }
+
+  handleDeleteSection(id: string, group: string) {
+    if (group === "experience") {
+      this.setState({
+        experience: this.state.experience.filter((obj) => obj.id !== id),
+      });
+    } else if (group === "education") {
+      this.setState({
+        education: this.state.education.filter((obj) => obj.id !== id),
+      });
+    }
   }
 
   render() {
