@@ -30,7 +30,7 @@ class PersonalDetails extends Component<IProps> {
                 name={key}
                 value={value}
                 handleChangeInput={handleChangeInput}
-                id={String(data[0].id)}
+                id={data[0].id}
               />
             );
           } else {

@@ -8,7 +8,7 @@ interface IProps {
   data: Array<ExperienceModel>;
 }
 
-class WorkExperienceView extends Component<IProps>  {
+class WorkExperienceView extends Component<IProps> {
   render() {
     const { data } = this.props;
     return (

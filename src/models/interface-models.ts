@@ -1,5 +1,5 @@
 export interface PersonalModel {
-  id: String,
+  id: string;
   Name: string;
   Title: string;
   Phone: string;

@@ -4,11 +4,16 @@ import Stack from "@mui/material/Stack";
 import PersonalDetailsView from "./view/PersonalDetailsView";
 import WorkExperienceView from "./view/WorkExperienceView";
 import EducationView from "./view/EducationView";
+import {
+  PersonalModel,
+  ExperienceModel,
+  EducationModel,
+} from "../models/interface-models";
 
 interface IProps {
-  personal: Array<any>;
-  experience: Array<any>;
-  education: Array<any>;
+  personal: Array<PersonalModel>;
+  experience: Array<ExperienceModel>;
+  education: Array<EducationModel>;
 }
 
 class View extends Component<IProps> {
