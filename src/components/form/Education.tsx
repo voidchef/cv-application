@@ -28,12 +28,12 @@ class Education extends Component<IProps> {
         </Typography>
         {data.map((details, i, data) => {
           return (
-            <Box key={uniqid()}>
+            <Box key={`education${i}`}>
               {Object.entries(details).map(([key, value]) => {
                 if (key !== "id") {
                   return (
                     <InputCreator
-                      key={uniqid()}
+                      key={`education${i}${key}`}
                       group="education"
                       name={key}
                       value={value}

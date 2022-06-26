@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import uniqid from "uniqid";
 import { EducationModel } from "../../models/interface-models";
 
 interface IProps {
@@ -19,7 +18,7 @@ class EducationView extends Component<IProps> {
         </Typography>
         {data.map((details, i) => {
           return (
-            <Grid container direction="column" key={uniqid()}>
+            <Grid container direction="column" key={`educationView${i}`}>
               <Grid
                 container
                 item

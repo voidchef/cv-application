@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import InputCreator from "../utils/InputCreator";
-import uniqid from "uniqid";
 import { PersonalModel } from "../../models/interface-models";
 
 interface IProps {
@@ -22,11 +21,11 @@ class PersonalDetails extends Component<IProps> {
         <Typography variant="h2" component="div">
           Personal Details
         </Typography>
-        {Object.entries(data[0]).map(([key, value]) => {
+        {Object.entries(data[0]).map(([key, value], i) => {
           if (key !== "id") {
             return (
               <InputCreator
-                key={uniqid()}
+                key={`personal${i}`}
                 group="personal"
                 name={key}
                 value={value}

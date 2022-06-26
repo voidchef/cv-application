@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import InputCreator from "../utils/InputCreator";
 import BtnCreator from "../utils/BtnCreator";
-import uniqid from "uniqid";
 import { ExperienceModel } from "../../models/interface-models";
 
 interface IProps {
@@ -28,12 +27,12 @@ class WorkExperience extends Component<IProps> {
         </Typography>
         {data.map((details, i, data) => {
           return (
-            <Box key={uniqid()}>
+            <Box key={`experience${i}`}>
               {Object.entries(details).map(([key, value]) => {
                 if (key !== "id") {
                   return (
                     <InputCreator
-                      key={uniqid()}
+                      key={`experience${i}${key}`}
                       group="experience"
                       name={key}
                       value={value}
