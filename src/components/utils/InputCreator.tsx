@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import TextField from "@mui/material/TextField";
-
+import uniqid from "uniqid";
 interface IProps {
   id: string;
   group: string;
@@ -19,6 +19,7 @@ class InputCreator extends Component<IProps> {
     if (name === "Description") {
       return (
         <TextField
+          key={uniqid()}
           id={id}
           label={name}
           name={name}
@@ -37,6 +38,7 @@ class InputCreator extends Component<IProps> {
     }
     return (
       <TextField
+        key={uniqid()}
         id={id}
         label={name}
         name={name}

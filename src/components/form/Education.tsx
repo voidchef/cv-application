@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import InputCreator from "../utils/InputCreator";
 import BtnCreator from "../utils/BtnCreator";
+import uniqid from "uniqid";
 import { EducationModel } from "../../models/interface-models";
 
 interface IProps {
@@ -27,12 +28,12 @@ class Education extends Component<IProps> {
         </Typography>
         {data.map((details, i, data) => {
           return (
-            <Box key={`education${i}`}>
+            <Box key={uniqid()}>
               {Object.entries(details).map(([key, value]) => {
                 if (key !== "id") {
                   return (
                     <InputCreator
-                      key={`education${key}`}
+                      key={uniqid()}
                       group="education"
                       name={key}
                       value={value}
