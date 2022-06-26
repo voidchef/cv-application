@@ -22,6 +22,8 @@ Project to create a CV Application
 - CSS
 - HTML
 - REACT
+- MATERIAL UI
+- TYPESCRIPT
 
 ### Tools
 
@@ -36,6 +38,7 @@ Project to create a CV Application
 ### Third party code
 
 - [Google Fonts](https://fonts.google.com/)
+- [Material UI](https://mui.com/)
 
 ## Outcome
 
@@ -49,8 +52,7 @@ Project to create a CV Application
 
 Features I am going to add to this app:
 
-- Approach a Responsive Web Design(RWD)
-- Add slider to set Max Cards
+- Add functionality to print the generated resume.
 
 ## Summary
 
@@ -58,6 +60,8 @@ Features I am going to add to this app:
 
 - learn to use React
 - learn to use state and props
+- learn to use material ui
+- learn to use typescript
 
 ## Getting Started
 
