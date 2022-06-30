@@ -5,15 +5,15 @@ import PersonalDetails from "./form/PersonalDetails";
 import WorkExperience from "./form/WorkExperience";
 import Education from "./form/Education";
 import {
-  PersonalInterface,
-  ExperienceInterface,
-  EducationInterface,
+  PersonalModel,
+  ExperienceModel,
+  EducationModel,
 } from "../models/interface-models";
 
 interface IProps {
-  personal: Array<PersonalInterface>;
-  experience: Array<ExperienceInterface>;
-  education: Array<EducationInterface>;
+  personal: Array<PersonalModel>;
+  experience: Array<ExperienceModel>;
+  education: Array<EducationModel>;
   handleChangeInput: (
     e: React.ChangeEvent<HTMLInputElement>,
     id: string,

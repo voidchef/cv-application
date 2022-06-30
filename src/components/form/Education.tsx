@@ -3,10 +3,10 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import InputCreator from "../utils/InputCreator";
 import BtnCreator from "../utils/BtnCreator";
-import { EducationInterface } from "../../models/interface-models";
+import { EducationModel } from "../../models/interface-models";
 
 interface IProps {
-  data: Array<EducationInterface>;
+  data: Array<EducationModel>;
   handleChangeInput: (
     e: React.ChangeEvent<HTMLInputElement>,
     id: string,
@@ -29,7 +29,7 @@ class Education extends Component<IProps> {
           return (
             <Box key={`education${i}`}>
               {Object.entries(details).map(([key, value]) => {
-                if (key !== "_id" && key !== "__v") {
+                if (key !== "id") {
                   return (
                     <InputCreator
                       key={`education${i}${key}`}
@@ -37,7 +37,7 @@ class Education extends Component<IProps> {
                       name={key}
                       value={value}
                       handleChangeInput={handleChangeInput}
-                      id={details._id}
+                      id={details.id}
                     />
                   );
                 } else {
@@ -48,7 +48,7 @@ class Education extends Component<IProps> {
                 group="education"
                 className="handleDeleteSectionBtn"
                 onClick={handleDeleteSection}
-                id={details._id}
+                id={details.id}
                 description="Delete"
               />
               {data.length - 1 === i && (

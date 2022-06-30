@@ -1,6 +1,5 @@
-export interface PersonalInterface{
-  _id: string;
-  _v: number;
+export interface PersonalModel {
+  id: string;
   Name: string;
   Title: string;
   Phone: string;
@@ -9,9 +8,8 @@ export interface PersonalInterface{
   Description: string;
 }
 
-export interface ExperienceInterface {
-  _id: string;
-  _v: number;
+export interface ExperienceModel {
+  id: string;
   Company: string;
   Position: string;
   "Start Date": string;
@@ -19,9 +17,8 @@ export interface ExperienceInterface {
   Description?: string;
 }
 
-export interface EducationInterface {
-  _id: string;
-  _v: number;
+export interface EducationModel {
+  id: string;
   Course: string;
   University: string;
   "Start Date": string;
@@ -30,7 +27,7 @@ export interface EducationInterface {
 }
 
 export interface State {
-  personal: PersonalInterface[];
-  experience: ExperienceInterface[];
-  education: EducationInterface[];
+  personal: PersonalModel[];
+  experience: ExperienceModel[];
+  education: EducationModel[];
 }
