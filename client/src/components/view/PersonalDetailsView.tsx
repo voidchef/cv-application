@@ -7,15 +7,18 @@ import Divider from "@mui/material/Divider";
 import phoneIcon from "../../img/phone-square-solid.svg";
 import emailIcon from "../../img/envelope-square-solid.svg";
 import locationIcon from "../../img/map-marker-alt-solid.svg";
-import { PersonalModel } from "../../models/interface-models";
+import { PersonalInterface } from "../../models/interface-models";
 
 interface IProps {
-  data: Array<PersonalModel>;
+  data: Array<PersonalInterface>;
 }
 
 class PersonalDetailsView extends Component<IProps> {
   render() {
     const { data } = this.props;
+    if (data.length === 0) {
+      return null;
+    }
     return (
       <Stack spacing={1} direction="column">
         <Grid container spacing={0} direction="row">

@@ -5,15 +5,15 @@ import PersonalDetailsView from "./view/PersonalDetailsView";
 import WorkExperienceView from "./view/WorkExperienceView";
 import EducationView from "./view/EducationView";
 import {
-  PersonalModel,
-  ExperienceModel,
-  EducationModel,
+  PersonalInterface,
+  ExperienceInterface,
+  EducationInterface,
 } from "../models/interface-models";
 
 interface IProps {
-  personal: Array<PersonalModel>;
-  experience: Array<ExperienceModel>;
-  education: Array<EducationModel>;
+  personal: Array<PersonalInterface>;
+  experience: Array<ExperienceInterface>;
+  education: Array<EducationInterface>;
 }
 
 class View extends Component<IProps> {
