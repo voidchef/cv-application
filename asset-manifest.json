@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/cv-application/static/css/main.9d2bf9c3.css",
+    "main.js": "/cv-application/static/js/main.9674a8e9.js",
+    "static/media/envelope-square-solid.svg": "/cv-application/static/media/envelope-square-solid.bcb187448eea33563fb58e7919f0c110.svg",
+    "index.html": "/cv-application/index.html",
+    "static/media/phone-square-solid.svg": "/cv-application/static/media/phone-square-solid.9c22c8e1baf7a08ef85e2c3da2016020.svg",
+    "static/media/map-marker-alt-solid.svg": "/cv-application/static/media/map-marker-alt-solid.d9fe5579ce7cf80dff9dec10233e4dcf.svg",
+    "main.9674a8e9.js.map": "/cv-application/static/js/main.9674a8e9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9d2bf9c3.css",
+    "static/js/main.9674a8e9.js"
+  ]
+}
